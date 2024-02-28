@@ -1,0 +1,50 @@
+database:
+  user: ${DB_USER:postgres}
+  name: ${DB_DBNAME:consumption_db}
+  port: ${DB_PORT:5432}
+  #ip: ${DB_IP:postgres} # DOCKER
+  ip: ${DB_IP:localhost} # LOCAL
+  password: ${DB_PASSWORD:root}
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show_sql: 'true'
+    hibernate:
+      ddl-auto: update
+    open-in-view: 'false'
+  datasource:
+    password: ${database.password}
+    username: ${database.user}
+    url: jdbc:postgresql://${database.ip}:${database.port}/${database.name}
+    platform: postgres
+  #rabbitmq:                   # DOCKER
+    #host: rabbit-container    # DOCKER
+    #port: 5672                # DOCKER
+    #username: guest           # DOCKER
+    #password: guest           # DOCKER
+
+server:
+  tomcat:
+    threads:
+      max: '1'
+  #port: ${PORT:8030} # DOCKER
+  port: ${PORT:8070} # LOCAL
+
+logging:
+  level:
+    org:
+      springframework: error
+    ro:
+      tuc: error
+    root: error
+
+security:
+  secret-key: cab1469918b02afcb995c564eba95ff6de690e9ec117d3f37c8ec6b0d375074c
+  expiration-time: 86400000
+
+rabbitmq:
+  queue:
+    consumption: queue_consumption
+    device: queue_device

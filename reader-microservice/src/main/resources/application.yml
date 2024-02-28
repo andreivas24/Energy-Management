@@ -1,0 +1,14 @@
+server:
+  tomcat:
+    threads:
+      max: '1'
+  port: ${PORT:8000}  #USER 1
+  #port: ${PORT:8001}   #USER 2
+
+logging:
+  level:
+    org:
+      springframework: error
+    ro:
+      tuc: error
+    root: error

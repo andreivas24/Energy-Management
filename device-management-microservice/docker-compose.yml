@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  database-device:  # Set a custom container name for the database
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: device_db
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgres-data-device:/var/lib/postgresql/data
+    networks:
+      - energy_network
+
+  application-device:  # Set a custom container name for the service
+    build: .
+    ports:
+      - "8011:8010"
+    depends_on:
+      - database-device
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://database-device:5432/device_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: root
+    networks:
+      - energy_network
+
+networks:
+  energy_network:
+    external: true
+
+volumes:
+  postgres-data-device:

@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  database-user:  # Set a custom container name for the database
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: user_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres-data-user:/var/lib/postgresql/data
+    networks:
+      - energy_network
+
+  application-user:  # Set a custom container name for the service
+    build: .
+    ports:
+      - "8021:8020"
+    depends_on:
+      - database-user
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://database-user:5432/user_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: root
+    networks:
+      - energy_network
+
+networks:
+  energy_network:
+    external: true
+
+volumes:
+  postgres-data-user:

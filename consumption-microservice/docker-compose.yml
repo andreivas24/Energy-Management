@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  database-consumption:  # Set a custom container name for the database
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: consumption_db
+    ports:
+      - "5435:5432"
+    volumes:
+      - postgres-data-consumption:/var/lib/postgresql/data
+    networks:
+      - energy_network
+
+  application-consumption:  # Set a custom container name for the service
+    build: .
+    ports:
+      - "8031:8030"
+    depends_on:
+      - database-consumption
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://database-consumption:5432/consumption_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: root
+    networks:
+      - energy_network
+
+networks:
+  energy_network:
+    external: true
+
+volumes:
+  postgres-data-consumption:

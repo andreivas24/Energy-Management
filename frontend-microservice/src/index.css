@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.add-button {
+  padding-bottom: 30px;
+}
+
+.save-button {
+  margin-top: 30px;
+}
+
+.text-error {
+  color: red; 
+}
+
+.centered-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-header{
+  background-color: #6C757D;
+  color: white
+}
+
+.logo {
+  width: 200px;
+  height: 200px;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.logo-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.padding-top-div {
+  padding-top: 50px;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh; /* Optional: Set a fixed height for centering within the viewport */
+}
+
+.chart-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.date-container {
+  margin-top: 40px;
+}
+
+.message-div {
+  margin-top: 40px;
+}
+
+/* Chat containers */
+.container-chat {
+  border: 2px solid #dedede;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.container-light {
+  background-color: #f1f1f1;
+  text-align: right;
+}
+
+/* Darker chat container */
+.container-dark {
+  background-color: #ddd;
+  text-align: left;
+}
+
+/* Clear floats */
+.container-chat::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Style time text */
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+/* Style time text */
+.time-left {
+  float: left;
+  color: #999;
+}
+
+/* Add these styles to your CSS */
+.seen {
+  color: green;
+}
+
+.delivered {
+  color: #00A2E8;
+}
+

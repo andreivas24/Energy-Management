@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  database-message:  # Set a custom container name for the database
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: message_db
+    ports:
+      - "5436:5432"
+    volumes:
+      - postgres-data-message:/var/lib/postgresql/data
+    networks:
+      - energy_network
+
+  application-message:  # Set a custom container name for the service
+    build: .
+    ports:
+      - "8041:8040"
+    depends_on:
+      - database-message
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://database-message:5432/message_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: root
+    networks:
+      - energy_network
+
+networks:
+  energy_network:
+    external: true
+
+volumes:
+  postgres-data-message:
