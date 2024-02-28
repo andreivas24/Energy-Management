@@ -1,3 +1,12 @@
+# Energy Management System
+App designed to manage users and their associated smart energy metering devices. The administrator can perform
+CRUD operations on user accounts, devices, and on the mapping of users to devices. Moreover, users can chat between
+them on a platform based on asynchronous messaging.
+Built using Spring Boot, utilizing React for the GUI, RabbitMQ for Message Queuing Protocol and PostgreSQL for
+storing data.
+
+**App Preview:**
+
 Login Page
 ![Login](https://github.com/RazvanB12/Energy-management/assets/92223898/171dec76-fd7a-42bf-99de-c18906fab5c9)
 
