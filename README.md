@@ -15,11 +15,11 @@ Admin Pages
 ![EditUser](https://github.com/andreivas24/Energy-Management/assets/92268035/7507a5ac-14bd-424e-8b68-07cc0ee809ff)
 ![AddUser](https://github.com/andreivas24/Energy-Management/assets/92268035/239ed041-d015-44fc-8dd8-7a6c5f031458)
 ![DeviceList](https://github.com/andreivas24/Energy-Management/assets/92268035/9b6c85c8-c761-410f-b2ad-366a3a611f53)
-![EditDevice](https://github.com/andreivas24/Energy-Management/assets/92268035/43f8526d-8738
+![EditDevice](https://github.com/andreivas24/Energy-Management/assets/92268035/21a719c3-1b38-4145-a9a5-a2e52bc7cd52)
 ![AddDevice](https://github.com/andreivas24/Energy-Management/assets/92268035/1ee8fe90-9bf4-4750-8fab-42db7666a65d)
 -415e-85bf-90b406562dff)
 ![BindingUserDevice](https://github.com/andreivas24/Energy-Management/assets/92268035/7a460bed-7095-49d4-834b-4c250d4525a1)
-![AssignDeviceToUser](https://github.com/andreivas24/Energy-Management/assets/92268035/8782e
+![AssignDeviceToUser](https://github.com/andreivas24/Energy-Management/assets/92268035/88af38ce-e609-4fab-b6cb-9da5e5b46bf7)
 ![Contacts](https://github.com/andreivas24/Energy-Management/assets/92268035/069a00d3-d454-4cb7-aca1-eb2609691f7c)
 4a0-f829-4dae-afe1-02b85fded851)
 ![AdminChatOneToOne](https://github.com/andreivas24/Energy-Management/assets/92268035/e5bf87dc-8a61-4033-932a-9fe28109b4c9)
